@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: homework_10
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+server:
+  port: 8081

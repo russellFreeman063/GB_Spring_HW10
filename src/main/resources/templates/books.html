@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Store</title>
+</head>
+<body style="margin: 0; padding: 0;">
+    <header style="display: flex; justify-content: center; height: 75px;">
+        <h1 class="title">BOOK STORE</h1>
+        <a href="/books">Книги</a>
+        <a href="/about">Обо мне</a>
+    </header>
+    <section style="display: flex;
+    justify-content: center;">
+        <table class="books-table">
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Год Публикации</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+            <tr th:each="b : ${books}" >
+                <td th:text="${b.title}"></td>
+                <td th:text="${b.author}"></td>
+                <td th:text="${b.publicationYear}"></td>
+                <td th:text="${b.price}"></td>
+                <td th:text="${b.quantity}"></td>
+            </tr>
+        </table>
+    </section>
+    <section style="display: flex; flex-direction: column; align-items: center;
+        justify-content: center; padding-top: 30px;">
+        <h2>Добавить книгу</h2>
+        <form action="books" method="post">
+            Название: <input type="text" name="title"><br />
+            Автор: <input type="text" name="author"><br />
+            Год публикации: <input type="text" name="publicityYear"><br />
+            Цена: <input type="text" name="price"><br />
+            Количество: <input type="number" name="quantity"><br />
+            <button type="submit">Добавить Книгу</button>
+        </form>
+    </section>
+</body>
+</html>
